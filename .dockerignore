@@ -1,0 +1,26 @@
+# VCS / tooling
+.git
+.gitignore
+.dockerignore
+.idea
+.vscode
+
+# Python caches / envs
+__pycache__
+*.pyc
+*.pyo
+.venv
+venv
+
+# Runtime data & secrets (never bake into the image)
+*.db
+*.db-shm
+*.db-wal
+data
+.env
+.env.example
+
+# Not needed at runtime (image runs `python -m hqnet` only)
+tools
+*.md
+docker-compose.yml

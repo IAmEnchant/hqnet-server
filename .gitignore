@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+
+# IDEs / tooling
+.idea/
+.vscode/
+*.swp
+
+# Type checking / linting
+.mypy_cache/
+.ruff_cache/
+
+# Database
+*.db
+*.db-wal
+*.db-shm
+data/
+.env
+
+# OS
+Thumbs.db
+Desktop.ini

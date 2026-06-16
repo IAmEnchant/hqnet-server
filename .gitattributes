@@ -1,0 +1,3 @@
+# Normalize all text files to LF in the repo and on checkout (cross-platform,
+# server runs on Linux/Docker). Prevents CRLF/LF churn on Windows clients.
+* text=auto eol=lf

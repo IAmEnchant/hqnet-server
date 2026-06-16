@@ -1,0 +1,24 @@
+services:
+  hqnet-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hqnet-server
+    restart: unless-stopped
+    ports:
+      - "6112:6112"
+    volumes:
+      - ./data:/data
+    env_file:
+      - .env
+    environment:
+      HQNET_METRICS_ENABLED: ${HQNET_METRICS_ENABLED:-false}
+      HQNET_METRICS_HOST: ${HQNET_METRICS_HOST:-127.0.0.1}
+      HQNET_METRICS_PORT: ${HQNET_METRICS_PORT:-9108}
+    command: ["python", "-m", "hqnet", "--host", "${HQNET_HOST:-0.0.0.0}", "--port", "${HQNET_PORT:-6112}"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; s=socket.create_connection(('127.0.0.1', 6112), 3); s.close()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

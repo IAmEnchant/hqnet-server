@@ -1,0 +1,6 @@
+# HQNET Server dependencies
+# Python >= 3.10 required (union type hints: str | None)
+# Optional runtime integrations
+prometheus_client>=0.20,<1
+python-dotenv>=1.0,<2
+argon2-cffi>=23.1,<24
